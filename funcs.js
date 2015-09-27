@@ -49,16 +49,17 @@ function prime() {
 	var output = document.getElementById("largePrime");
 	var nInput = document.getElementById("primeN").value;
 
-
 	facs = getFactors(nInput);
 	primes = [];
 
+	// find which factors are primes
 	for(var i = 0; i < facs.length; ++i) {
 		if(isPrime(facs[i])) {
 			primes.push(facs[i]);
 		}
 	}
 
+	// get the max in the array, "..." expands array
 	var largePrime = Math.max(...primes);
 	output.innerHTML = "Largest Prime Factor: " + largePrime;
 }
